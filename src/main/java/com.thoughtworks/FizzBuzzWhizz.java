@@ -16,13 +16,16 @@ public class FizzBuzzWhizz {
         boolean isBuzz = isFivePlus(inputNumber);
         boolean isWhizz = isSevenPlus(inputNumber);
 
-        String reportNumber = (isFizz ? FIZZ : "") + (isBuzz ? BUZZ : "") + (isWhizz ? WHIZZ : "");
-
         if (!(isFizz | isBuzz | isWhizz)) {
-            reportNumber += isContainerThree(inputNumber) ? FIZZ : "";
+            return isContainerThree(inputNumber) ? FIZZ : "";
         }
 
-        return "".equals(reportNumber) ? String.valueOf(inputNumber) : reportNumber;
+        return reportNumber(isFizz, isBuzz, isWhizz, inputNumber);
+    }
+
+    public static String reportNumber(boolean isOutputFizz, boolean isOutputBuzz, boolean isOutputWhizz, int inputNum) {
+        String reportNumber = (isOutputFizz ? FIZZ : "") + (isOutputBuzz ? BUZZ : "") + (isOutputWhizz ? WHIZZ : "");
+        return "".equals(reportNumber) ? String.valueOf(inputNum) : reportNumber;
     }
 
     private static boolean isContainerThree(int num) {
