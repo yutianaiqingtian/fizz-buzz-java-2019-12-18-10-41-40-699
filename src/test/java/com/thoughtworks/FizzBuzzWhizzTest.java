@@ -61,6 +61,15 @@ public class FizzBuzzWhizzTest {
     }
 
     @Test
+    public void shouldReturnFizzBuzzWhizzWhenGivenInputThreePlusFivePlusSeven() {
+        int input = 3 * 5 * 7;
+
+        String result = fizzBuzzWhizz(input);
+
+        assertEquals("FizzBuzzWhizz", result);
+    }
+
+    @Test
     public void shouldReturnBuzzWhenGivenInputValueContainThree() {
         int input = 13;
 
